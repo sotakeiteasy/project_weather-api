@@ -1,7 +1,6 @@
 import { search } from "../";
 
 export function initializeEventListeners() {
-
     const searchButton = document.querySelector(".search-button")
     const searchInput = document.querySelector(".search-input")
     let degreeType = 'metric'
@@ -19,12 +18,9 @@ export function initializeEventListeners() {
     })
 
     const toggleContainer = document.querySelector('.toggle-container');
-
     toggleContainer.addEventListener('click', () => {
         toggleContainer.classList.toggle('active');
         degreeType = degreeType === 'metric' ? 'us' : 'metric';
         search(undefined, degreeType)
     });
-
-
 };

@@ -6,15 +6,7 @@ import { createCarousel } from './modules/weekCarousel';
 import { getClosestTime } from './modules/functions';
 import { cleanData } from './modules/functions';
 import { initializeEventListeners } from './modules/UI';
-
-
 import { sunPosition } from './modules/displayDay';
-
-
-// celsium + pressure scales + getlocation of user
-
-    
-
 
 window.addEventListener('load', () => {
     document.getElementById('content').style.visibility = 'visible';
@@ -52,8 +44,6 @@ let lastLocation = firstLocation
 
 
 export function search(location = lastLocation, degreeType = 'metric') {
-    // const location = searchInput.value.trim();
-
     if (location) {
         getData(location, degreeType).then(data => {
              if (!data) {
@@ -85,10 +75,7 @@ export function search(location = lastLocation, degreeType = 'metric') {
     }
 }
 
-
-
 async function getGeoLocation() {
-  // Замените 'your_access_token' на ваш реальный токен доступа к API
   const accessToken = 'a5e42750730260';
   const url = `https://ipinfo.io?token=${accessToken}`;
 
@@ -106,7 +93,6 @@ async function getGeoLocation() {
 }
 
 getGeoLocation();
-
 initializeEventListeners()
 
 

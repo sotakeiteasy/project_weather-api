@@ -3,16 +3,14 @@ import { addPlusToDegree } from "./functions"
 
 import overcastIcon from '../icons/negative.svg';   
 import clearDayIcon from '../icons/clear-day.svg';   
-// import clearNightIcon from '../icons/clear-night.svg';   
 import moderateRainIcon from '../icons/moderate-rain.svg';   
 import moderateSnowIcon from '../icons/moderate-snow.svg';   
-import cloudyDayIcon from '../icons/cloudy-day.svg';   
-// import cloudyNightIcon from '../icons/cloudy-night.svg';   
-// import noDataIcon from '../icons/no-data.svg';  
+import cloudyDayIcon from '../icons/cloudy-day.svg';    
 
 export function displayWeek(weekData) {
     const weekWeatherContainer = document.querySelector('#week')
     weekWeatherContainer.innerHTML = ''
+    
     for (let i = 0; i < weekData.length; i++){
         const day = document.createElement('div')
         day.classList.add('day')

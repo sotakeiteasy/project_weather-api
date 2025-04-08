@@ -37,7 +37,6 @@ export function sunPosition(weekData) {
     let sunriseMinutes = sunriseTime.slice(3, 5)
     let sunrise = sunriseHours * 60 + parseInt(sunriseMinutes)
 
-    // let time = format(new Date(fullDateTime), 'HH:mm'); 
     let time = timeString.slice(0, -3);
 
     let timeHours = time.slice(0, -3)
@@ -64,8 +63,6 @@ export function sunPosition(weekData) {
         dot.style.top = `${y}px`;
     }
     
-    // updateDotOnArc(sunPos); 
-
     let degree = 0;
 
     function animateDot() {
@@ -89,14 +86,11 @@ export function sunPosition(weekData) {
     sunriseEl.textContent = sunriseTime
     sunsetEl.textContent = sunsetTime
 
-
     const dayDescription = document.querySelector('.dayDescription')
     dayDescription.textContent = weekData[0].description
 }
 
-export function displayDay(weekData, location) {
-
-    
+export function displayDay(weekData, location) {  
 
     const todayContainer = document.querySelector('#today');
 
@@ -242,16 +236,16 @@ export function displayDay(weekData, location) {
 }
 
 function setBeforeBackgroundImage(containerSelector, imageUrl) {
-        let styleTag = document.getElementById("dynamic-before-style");
+    let styleTag = document.getElementById("dynamic-before-style");
 
-        if (!styleTag) {
-        styleTag = document.createElement("style");
-        styleTag.id = "dynamic-before-style";
-        document.head.appendChild(styleTag);
-        }
-        if (styleTag) {
-            styleTag.innerHTML = '';
-        }
-
-        styleTag.textContent = `body #today::before { background-image: url("${imageUrl}"); };`;
+    if (!styleTag) {
+    styleTag = document.createElement("style");
+    styleTag.id = "dynamic-before-style";
+    document.head.appendChild(styleTag);
     }
+    if (styleTag) {
+        styleTag.innerHTML = '';
+    }
+
+    styleTag.textContent = `body #today::before { background-image: url("${imageUrl}"); };`;
+}
